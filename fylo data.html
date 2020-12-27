@@ -1,0 +1,615 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+
+<head>
+	
+	<title>Fylo data storage component</title>
+	
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+	
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+	
+	<style>
+	
+	
+		body{
+			
+			background-color: #08082a;
+		}
+	
+		#bg{
+			
+			position: absolute;
+			top:50%;
+			width: 100%;
+			height: 80%;
+			background: url(backgrounddesktop.png);
+			background-repeat: no-repeat;
+		}
+		#bg2{
+			
+			position: absolute;
+			
+			top:0%;
+			width: 100%;
+			height: 120%;
+			background: url(backgroundmob.png);
+			background-size: 100% 100%;
+			background-repeat: no-repeat;
+		}
+	
+		#first1{
+			
+			position: absolute;
+			top:40%;
+			height: 500px;
+			width: 100%;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			
+		}
+		#left{
+			
+			height: 180px;
+			width: 350px;
+			background-color: #0d0d5f;
+			border-top-right-radius: 130px;
+			margin-top: -20px;
+			
+		}
+	
+		#right{
+			
+			height: 155px;
+			width: 630px;
+			background-color: #0d0d5f;
+			margin-left: 30px;
+			border-radius: 10px;
+			margin-top: -32px;
+			
+		}
+	
+		h2{
+			margin-top: 40px;
+			position: relative;
+			top:42px;
+			margin-left: 30px;
+			font-size: 20px;
+			color:#9f9f9f;
+			font-family: serif;
+		}
+		
+	/*	meter::-webkit-meter-optimum-value {
+ /* background: -Pale Blue: hsl(243, 100%, 93%)
+-Grayish Blue: hsl(229, 7%, 55%)
+-Dark Blue: hsl(228, 56%, 26%)
+-Very Dark Blue: hsl(229, 57%, 11%)
+	; */
+		/*	background: #e66666 40%,
+				       red 40%;  
+			
+}  */
+		
+		
+		meter{
+			border-radius: 15px;
+			margin-left: 30px;
+			position: relative;
+			top:40px;
+			width: 550px;
+			height: 35px;
+			
+			
+		}
+		
+		
+		meter::-webkit-meter-optimum-value {
+		/*	border-radius: 15px; */
+			border-top-right-radius: 15px;
+			border-bottom-right-radius: 15px;
+		
+  box-shadow: 0 5px 5px -5px #999 inset;
+  background-image: linear-gradient(
+    90deg, 
+    #cf6969 40%, 
+    #f05672 20%
+	  
+	  
+	  
+  );
+			
+		} 
+		
+		#ball{
+			
+			border-radius: 60px;
+			position: absolute;
+			margin-left: -127px;
+			margin-top: 50px;
+			background-color:white;
+			z-index: 10000;
+		}
+		
+		
+		
+		#inp{
+			
+			margin-left: 30px;
+			width: 550px;
+			height: 20px;
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		h4{
+			margin-left: 30px;
+			position: relative;
+			top:27px;
+			color:white;
+		}
+		
+		h1{
+			font-size: 43px;
+			color:white;
+			margin-top: 30px;
+			margin-left: 50px;
+		}
+		
+		
+	/*	img{
+
+			margin-left: 30px;
+			border:px solid;
+			background-color: #08082a;
+			background-size:900px;
+		
+			background-clip: border-box;
+			
+		} */
+		#icons{
+			display: flex;
+			margin-left: 55px;
+
+		}
+		
+		#im1{
+			background-color: #08082a;
+			width: 40px;
+			height: 40px;
+			margin-top: -10px;
+			border-radius: 5px;
+		}
+		#im2{
+			background-color: #08082a;
+			width: 40px;
+			height: 40px;
+			margin-top: -10px;
+			border-radius: 5px;
+			margin-left: 20px;
+		}
+		#im3{
+			background-color: #08082a;
+			width: 40px;
+			height: 40px;
+			margin-top: -10px;
+			border-radius: 5px;
+			margin-left: 20px;
+		}
+		
+	
+		#img1{
+		
+		position: relative;
+			left:10px;
+			top:7px;
+		} 
+		
+		
+		#img2{
+			position: relative;
+			left:10px;
+			top:7px;
+		
+		}
+		#img3{
+			position: relative;
+			left:10px;
+			top:7px;
+		
+		}   
+		
+		/* message */
+		
+		
+		
+		.box {
+    width: 188px;
+    border-radius: 19px;
+    height: 81px;
+    margin: 50px auto;
+			margin-top: -170px;
+			margin-left: 400px;
+			
+    background: white;
+    padding: 20px;
+    text-align: center;
+   font-weight: 900;
+    color: black;
+			font-size: 35px;
+			
+    font-family:Raleway;
+			
+    position: relative;
+			
+}
+		#words{
+			margin-top: -15px;
+		}
+		#first{
+			
+			font-size: 32px;
+			position: relative;
+			top:1px;
+		}
+		
+		#third{
+			
+			font-size: 40px;
+			position: relative;
+			top:6px;
+		}
+		
+		
+		.sb1:before {
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-left: 10px solid white;
+    border-right: 10px solid transparent;
+    border-top: 26px solid white;
+    border-bottom: 17px solid transparent;
+    right: 0px;
+    top: 64px;
+}
+		
+		/* XS */
+		
+		
+		#right2{
+			
+			height: 180px;
+			width: 350px;
+			background-color: #0d0d5f;
+			margin-left: 10px;
+			margin-top: -150px;
+			border-radius: 10px;
+			
+		}
+		
+		
+		#met2{
+			border-radius: 15px;
+			margin-left: 30px;
+			position: relative;
+			top:0px;
+			margin-top: 50px;
+			width: 250px;
+			height: 35px;
+			
+			
+		}
+		#mob{
+			margin-top: 40px;
+			position: relative;
+			top:45px;
+			margin-left: 30px;
+			font-size: 20px;
+			color:#9f9f9f;
+			font-family: serif;
+		}
+		
+		h5{
+			margin-left: 30px;
+			color:white;
+		}
+		
+		#ball2{
+			
+			border-radius: 60px;
+			position: absolute;
+			margin-left: -67px;
+			margin-top: 60px;
+			background-color:white;
+			z-index: 10000;
+		}
+		
+		/* message */
+		
+		
+			.box2 {
+    width: 188px;
+    border-radius: 19px;
+    height: 81px;
+    margin: 50px auto;
+			margin-top: 12px;
+				margin-left: 57px;
+			font-weight: 900;
+    background: white;
+    padding: 20px;
+    text-align: center;
+    
+    color: black;
+			font-size: 35px;
+			
+    font-family:Raleway;
+			
+    position: relative;
+			
+}
+		#words2{
+			margin-top: -15px;
+		}
+		#first2{
+			
+			font-size: 32px;
+			position: relative;
+			top:1px;
+		}
+		
+		#third2{
+			
+			font-size: 40px;
+			position: relative;
+			top:6px;
+		}
+		
+		
+	/*	.sb2:before {
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-left: 10px solid white;
+    border-right: 10px solid transparent;
+    border-top: 26px solid white;
+    border-bottom: 17px solid transparent;
+    right: 0px;
+    top: 64px;
+}
+		*/
+		
+		#first3{
+			
+			
+			position: relative;
+			top:1px;
+		}
+		
+		#third3{
+			
+			
+			position: relative;
+			top:3px;
+		}
+		
+		#first30{
+			
+			
+			position: relative;
+			top:1px;
+		}
+		
+		#third30{
+			
+			
+			position: relative;
+			top:3px;
+		}
+		
+		
+		
+		
+		/* my challenge */
+		
+		
+		
+		
+		h6{
+			font-size: 16px;
+			color:black;
+			position: absolute;
+			bottom: -25%;
+			left:35%;
+		}
+		h6 a{
+			color:white;
+			text-decoration: underline;
+		}
+		
+		h6 a:hover{
+			text-decoration: underline;;
+			color:white;
+			opacity: 0.8
+		}
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		#x2{
+			font-size: 16px;
+			color:black;
+			position: absolute;
+			bottom: -20%;
+			left:10%;
+		}
+		#x2 a{
+			color:white;
+			text-decoration: underline;
+		}
+		
+		h6 a:hover{
+			text-decoration: underline;;
+			color:white;
+			opacity: 0.8
+		}
+	
+		
+		
+		
+		
+		
+		
+		
+	</style>
+	
+	
+	
+	
+	</head>
+
+<body>
+	
+	<div class="visible-lg visible-md visible-sm" id="bg">  </div>
+	
+	<div class="visible-xs" id="bg2">  </div>
+	
+	
+	<div id="first1">
+	
+	
+	<div id="left">   
+		
+		
+		<h1><img src="./images/logo.svg" alt="logo"/></h1>
+		<br>
+	<!--	<div id="icons">
+			
+			<img src="icon-document.svg"/> 
+			<img src="icon-folder.svg"/> 
+			<img src="icon-upload.svg"/> 
+		
+		</div>  -->
+		
+			<div id="icons">
+			
+			<div id="im1">  <img id="img1" src="./images/icon-document.svg" alt="document"/> </div>
+				
+				&nbsp;
+			<div id="im2"> <img id="img2" src="./images/icon-folder.svg" alt="folder"/> </div>
+				&nbsp;
+			<div id="im3"> <img id="img3" src="./images/icon-upload.svg" alt="upload"/> </div>
+		
+		</div>
+		
+		
+		</div>
+	
+		<div class="visible-lg visible-md visible-sm" >
+	
+	<div id="right">
+		
+			<h2>You've used <strong style="color:white; font-family: sans-serif;"><span id="first3">8</span>1<span id="third3">5</span> GB </strong> of you storage</h2>
+		
+		
+		<meter  value="80" max="100"> </meter>  <i id="ball" class="far fa-circle"></i> 
+		
+		<!--  <input step="0"  value="80" max="100"id="inp" type="range">  -->
+		<h4>0 GB &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 1000 GB</h4>
+		
+		<div class="box sb1"> <div id="words">    <span id="first">1</span>8<span id="third">5</span>  <strong style="font-size: 13px; color:#9f9f9f;">GB left</strong> </div> </div>
+		
+		</div>
+		</div>	
+		
+		
+		
+		
+		<div class="visible-xs" >
+	
+	<div id="right2">
+		
+		<h2 id="mob">You've used <strong style="color:white; font-family:sans-serif;"><span id="first30">8</span>1<span id="third30">5</span> GB </strong> of you storage</h2>
+		
+		<meter id="met2"  value="80" max="100"> </meter>  <i id="ball2" class="far fa-circle"></i> 
+		
+		<!--  <input step="0"  value="80" max="100"id="inp" type="range">  -->
+		<h5>0 GB &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   1000 GB</h5>
+		
+		
+		<div class="box2 sb2"> <div id="words2">    <span id="first2">1</span>8<span id="third2">5</span>  <strong style="font-size: 13px; color:#9f9f9f;">GB left</strong> </div> </div>
+		
+		
+		
+		</div>
+		</div>	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	</div>
+	
+	<div class="visible-lg visible-md visible-sm">  
+	
+	<h6>Challenge by <a href="https://www.frontendmentor.io/solutions">Frontend Mentor</a> coded by <a href="https://www.frontendmentor.io/profile/Karimsamir112">Karim Samir</a></h6>
+	
+	 </div>
+	
+	
+	
+	<div class="visible-xs">  
+	
+	<h6 id="x2">Challenge by <a href="https://www.frontendmentor.io/solutions">Frontend Mentor</a> coded by <a href="https://www.frontendmentor.io/profile/Karimsamir112">Karim Samir</a></h6>
+	
+	 </div>
+	
+	
+	
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+	
+	
+	
+		<script src="https://kit.fontawesome.com/682febeeb9.js" crossorigin="anonymous"></script> 
+	</body>
+
+
+
+
+
+
+
+
+
+
+</html>
